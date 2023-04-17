@@ -2,6 +2,7 @@ import React from "react";
 import './AppWrapper.css';
 
 const AppWrap = (Component, idName, ClassNames) => function HOC() {
+
     return (
     <div
         id={idName}
