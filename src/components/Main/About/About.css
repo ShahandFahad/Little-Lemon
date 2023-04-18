@@ -1,5 +1,78 @@
-.app_about {
-    border: 1px solid lightcoral;
-    width: 100%;
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+
+
+/* 
+    font-family: 'Karla', sans-serif;
+*/
+
+/* 
+        font-family: 'Markazi Text', serif;
+*/
+.app_about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    /* border: 1px solid red; */
+}
+.app__about-image-box-section {
+    /* border: 5px solid rgb(68, 65, 65); */
+    width: 50%;
+}
+.app__about-image-holder {
+    display: flex;
+    position: relative;
+    /* border: 5px solid rgb(0, 166, 255); */
+    width: fit-content;
+}
+
+.img-box-2 {
+    position: absolute;
+    top: -100px;
+    left: 180px;
+
+}
+
+.app__about-image-box {
+    width: 273px;
+    height: 338px;
+    /* border: 3px solid red; */
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.app_about-description-box {
+    width: 40%;
+    /* border: 1px solid rebeccapurple; */
+    display: inline-block;
+}
+.app__about-description {
+    margin-top: 50px;
+    width: 80%;
+    text-align: justify;
+    font-size: 18px;
+    color: #495E57;
+    display: inline-block;
+    /* border: 1px solid rebeccapurple; */
+}
+.app__about-title {
+    font-size: 64px;
+    color: #F4CE14;
+    /* border: 1px solid rebeccapurple; */
+    display: inline-block;
+
+}
+.app__about-subtitle {
+    margin-top: 7px;
+    font-size: 40px;
+    color: #495E57;
+    display: inline-block;
+    /* border: 1px solid rebeccapurple; */
 }
