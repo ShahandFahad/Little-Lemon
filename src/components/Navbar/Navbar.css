@@ -14,7 +14,7 @@ nav {
     text-transform: uppercase;
     padding-left: 70px;
     padding-right: 70px;
-    border: 1px solid rgb(255, 111, 0);
+    /* border: 1px solid rgb(255, 111, 0); */
 }
 
 nav ul {

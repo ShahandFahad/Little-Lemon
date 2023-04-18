@@ -23,19 +23,19 @@ header {
     padding: 15px;
 }
 
-h1 {
+.app__header-data h1 {
     font-size: 85px;
     font-weight: 900;
     color: #F4CE14;
 }
-h3 {
+.app__header-data h3 {
     font-size: 40px;
     font-weight: 400;
 }
-p {
+.app__header-data p {
     font-size: 24px;
 }
-button {
+.app__header-data button {
     padding: 10px;
     font-size: 28px;
     background-color: #F4CE14;
@@ -43,7 +43,7 @@ button {
     outline: none;
     border: none;
     font-weight: 700;
-    border-radius: 16px;
+    border-radius: 10px;
 }
 
 
