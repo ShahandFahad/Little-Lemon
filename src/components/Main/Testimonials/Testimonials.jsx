@@ -3,6 +3,11 @@ import { AppWrap } from "../../../wrapper";
 import { images } from "../../../constants";
 import './Testimonials.css';
 import { AiFillStar } from 'react-icons/ai';
+import styled, { keyframes } from 'styled-components';
+import { pulse } from 'react-animations'; 
+
+const Pulse = styled.div`animation: 5s ${keyframes`${pulse}`} infinite`;
+
 const reviews = [
     {image: images.iqsf, name: "IQSF", reviewText: "Review rext rext lorem ipsudolar"},
     {image: images.sajal, name: "Sajal", reviewText: "Review rext rext lorem ipsudolar"},
@@ -37,7 +42,9 @@ const Testimonials = () => {
                 {
                     reviews.map((review) => {
                             return (
-                                <ReviewCard props={review} />
+                                <Pulse>
+                                    <ReviewCard props={review} />
+                                </Pulse>
                             );
                         })
                 }

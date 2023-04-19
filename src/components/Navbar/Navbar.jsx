@@ -5,18 +5,18 @@ import { images } from '../../constants';
 export default function Navbar() {
     const navElements = ['Home', 'About', 'Menu', 'Reservations', 'Order Online', 'Login'];
     return(
-    <nav>
+    <nav id="Home">
         <ul>
             <li>
-                <a href="#">
+                <a href="#Home">
                     <img src={images.logo} alt="logo image" />
                 </a>
             </li>
             {
                 navElements.map((element) => {
                     return (
-                    <li key={element}>
-                        <a href="#">
+                    <li key={`key-${element}`}>
+                        <a href={`#${element}`}>
                             {element}
                         </a>
                     </li>

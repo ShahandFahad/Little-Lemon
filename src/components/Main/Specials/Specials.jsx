@@ -4,6 +4,12 @@ import { images } from "../../../constants";
 import './Specials.css';
 import { MdDeliveryDining } from 'react-icons/md';
 
+import styled, { keyframes } from 'styled-components';
+import { pulse } from 'react-animations'; 
+
+const Pulse = styled.div`animation: 8s ${keyframes`${pulse}`} infinite`;
+
+
 const foodItems = [
     {
         name: 'Greek Salad', 
@@ -19,6 +25,12 @@ const foodItems = [
     }, 
     {
         name: "Lemon Dessert",
+        price: "$5.00",
+        description: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
+        image : images.lemonDessert,
+    },
+    {
+        name: "New Recipie",
         price: "$5.00",
         description: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
         image : images.lemonDessert,
@@ -66,7 +78,9 @@ const Specials = () => {
                 {
                     foodItems.map((item) => {
                         return (
-                            <FoodCard props={item} />
+                            <Pulse>
+                                <FoodCard props={item} />
+                            </Pulse>
                         );
                     })
                 }
@@ -75,4 +89,4 @@ const Specials = () => {
     );
 }
 
-export default AppWrap(Specials, 'specials', 'app__specials');
+export default AppWrap(Specials, 'Menu', 'app__specials');
