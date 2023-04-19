@@ -2,6 +2,12 @@ import React from "react";
 import './Header.css';
 import {AppWrap} from '../../wrapper';
 import { images } from "../../constants";
+import BlockRevealAnimation from 'react-block-reveal-animation';
+
+import styled, { keyframes } from 'styled-components';
+import { pulse } from 'react-animations'; 
+
+const Pulse = styled.div`animation: 6s ${keyframes`${pulse}`} infinite`;
 
 const Header = () => {
     const headerData = {
@@ -15,25 +21,34 @@ const Header = () => {
     <header>
         
         <div className="app__header-data">
-            <h1>
-                {headerData.cafeTitle}
-            </h1>
-            <h3>
-                {headerData.cafeLocation}
-            </h3>
-            <p>
-                {headerData.cafeDescription}
-            </p>
-            <button>
-                {headerData.cafeButtonName}
-            </button>
+            <BlockRevealAnimation color="#F4CE14">
+                <h1>
+                    {headerData.cafeTitle}
+                </h1>
+            </BlockRevealAnimation>
+            <BlockRevealAnimation color='#EDEFEE'>
+                <h3>
+                    {headerData.cafeLocation}
+                </h3>
+                <p>
+                    {headerData.cafeDescription}
+                </p>
+            </BlockRevealAnimation>
+            <BlockRevealAnimation color="#F4CE14">
+                <button>
+                    {headerData.cafeButtonName}
+                </button>
+            </BlockRevealAnimation>
         </div>
-        <div className="app__header-image"
-            style={{backgroundImage:`url(${images.resturantFood})`}}
-        >
-
-        </div>
+        <BlockRevealAnimation color='#333333'>
+            <Pulse>
+                <div 
+                    className="app__header-image"
+                    style={{backgroundImage:`url(${images.resturantFood})`}}
+                />
+            </Pulse>
+        </BlockRevealAnimation>
     </header> );
 }
 
-export default AppWrap(Header, 'header-section', 'app__header');
+export default AppWrap(Header, 'Landing', 'app__header');

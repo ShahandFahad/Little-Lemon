@@ -44,7 +44,7 @@
 .app__specials-food {
     /* border: 1px solid rgb(10, 28, 83); */
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(1, 1fr);
     justify-content: space-between;
     gap: 25px;

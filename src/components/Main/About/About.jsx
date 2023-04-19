@@ -2,6 +2,15 @@ import React from "react";
 import { AppWrap } from "../../../wrapper";
 import './About.css';
 import { images } from "../../../constants";
+
+
+import styled, { keyframes } from 'styled-components';
+import { pulse } from 'react-animations'; 
+
+
+
+const Pulse = styled.div`animation: 8s ${keyframes`${pulse}`} infinite`;
+
 const aboutData = {
     title: "Little Lemon",
     subTitle: "Chicago",
@@ -18,36 +27,41 @@ const About = () => {
         <div
             className="app_about-section"
         >
-            <div className="app_about-description-box">
-                <h1 className="app__about-title">{aboutData.title}</h1>
-                <br />
-                <h4 className="app__about-subtitle">{aboutData.subTitle}</h4>
-                <br />
-                <p className="app__about-description">
-                    {aboutData.description}
+            
+            
+                <div className="app_about-description-box">
+                    <h1 className="app__about-title">{aboutData.title}</h1>
                     <br />
+                    <h4 className="app__about-subtitle">{aboutData.subTitle}</h4>
                     <br />
-                    {aboutData.description}
-                </p>
-            </div>
+                    <p className="app__about-description">
+                        {aboutData.description}
+                        <br />
+                        <br />
+                        {aboutData.description}
+                    </p>
+                </div>
+           
             {/* <div className="app__about-image-box-section"> */}
                 <div className="app__about-image-holder">
-                    <div className="app__about-image-box img-box-1"
-                        style= 
-                        {
+                    <Pulse>
+                        <div className="app__about-image-box img-box-1"
+                            style= 
                             {
-                                backgroundImage: `url(${aboutData.image2})`
+                                {
+                                    backgroundImage: `url(${aboutData.image2})`
+                                }
                             }
-                        }
-                    ></div>
-                    <div className="app__about-image-box img-box-2" 
-                        style=
-                        { 
-                            {
-                                backgroundImage: `url(${ aboutData.image1 })`
+                        ></div>
+                        <div className="app__about-image-box img-box-2" 
+                            style=
+                            { 
+                                {
+                                    backgroundImage: `url(${ aboutData.image1 })`
+                                } 
                             } 
-                        } 
-                    ></div>
+                        ></div>
+                    </Pulse>
                 </div>
             {/* </div> */}
 
@@ -55,4 +69,4 @@ const About = () => {
     );
 }
 
-export default AppWrap(About, 'about-section', 'app__about');
+export default AppWrap(About, 'About', 'app__about');
