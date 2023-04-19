@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap'); */
 
 .app__header {
     background-color: #495E57;
@@ -9,6 +9,7 @@
 header {
     /* border: 1px solid red; */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
@@ -58,4 +59,28 @@ header {
     background-size: auto 100%;
 
     border-radius: 16px;
+}
+
+@media screen and (max-width: 1020px){
+    .app__header-image{
+        width: 350px;
+        height: 450px;
+    }
+
+   
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        justify-content: center;
+        gap: 25px;
+    }
+    .app__header-data {
+             width: 80%;
+    }
+
+    .app__header-image {
+        display: none;
+    }
+    
 }

@@ -36,8 +36,8 @@ const About = () => {
                     <br />
                     <p className="app__about-description">
                         {aboutData.description}
-                        <br />
-                        <br />
+                            <br />
+                            <br />
                         {aboutData.description}
                     </p>
                 </div>
@@ -52,7 +52,7 @@ const About = () => {
                                     backgroundImage: `url(${aboutData.image2})`
                                 }
                             }
-                        ></div>
+                        />
                         <div className="app__about-image-box img-box-2" 
                             style=
                             { 
@@ -60,7 +60,7 @@ const About = () => {
                                     backgroundImage: `url(${ aboutData.image1 })`
                                 } 
                             } 
-                        ></div>
+                        />
                     </Pulse>
                 </div>
             {/* </div> */}

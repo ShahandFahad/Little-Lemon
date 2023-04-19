@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap'); */
 
 
 /* 
@@ -18,17 +18,18 @@
 
 
 .app__footer-section {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    /* justify-content: space-between; */
-    gap: 100px;
+    /* display: grid;
+    grid-template-columns: repeat(4, auto); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
     color: #495E57;
 }
 
 .app__about-image-box {
     width: 290px;
     height: 380px;
-    /* border: 3px solid red; */
 
     background-repeat: no-repeat;
     background-position: center;

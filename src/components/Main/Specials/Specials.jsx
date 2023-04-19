@@ -73,17 +73,20 @@ const Specials = () => {
             </button>
            </div>
             <div
-                className="app__specials-food"
-            >
-                {
-                    foodItems.map((item) => {
-                        return (
-                            <Pulse>
-                                <FoodCard props={item} />
-                            </Pulse>
-                        );
-                    })
-                }
+                className="app__specials-food-card-holder">
+                <div
+                    className="app__specials-food"
+                >
+                        {
+                            foodItems.map((item) => {
+                                return (
+                                    <Pulse>
+                                        <FoodCard props={item} />
+                                    </Pulse>
+                                );
+                            })
+                        }
+                </div>
             </div>
         </div>
     );
