@@ -3,21 +3,21 @@ import './Navbar.css';
 import { images } from '../../constants';
 
 export default function Navbar() {
-    const navElements = ['Home', 'About', 'Menu', 'Reservations', 'Order Online', 'Login'];
+    const navItems = ['Home', 'About', 'Menu', 'Reservations', 'Order Online', 'Login'];
     return(
-    <nav id="Home">
-        <ul>
-            <li>
-                <a href="#Home">
+    <nav className="app__navbar">
+        <div className="app__navbar-logo" >
+            <a href="#">
                     <img src={images.logo} alt="logo image" />
-                </a>
-            </li>
+            </a>
+        </div>
+        <ul className="app__navbar-links">
             {
-                navElements.map((element) => {
+                navItems.map((item) => {
                     return (
-                    <li key={`key-${element}`}>
-                        <a href={`#${element}`}>
-                            {element}
+                    <li key={`key-${item}`}>
+                        <a href={`#${item}`}>
+                            {item}
                         </a>
                     </li>
                     );

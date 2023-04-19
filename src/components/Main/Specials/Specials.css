@@ -16,6 +16,8 @@
     /* border: 1px solid royalblue; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
     gap: 50px;
     width: 100%;
     padding: 15px;
@@ -41,12 +43,20 @@
     font-weight: 700;
     border-radius: 10px;
 }
+
+/* center all the food cards */
+.app__specials-food-card-holder {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .app__specials-food {
     /* border: 1px solid rgb(10, 28, 83); */
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(1, 1fr);
-    justify-content: space-between;
     gap: 25px;
     padding: 15px;
 }
@@ -126,4 +136,21 @@
 
 .app__specials-order:hover {
     cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width:1020px) {
+    .app__specials-food {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .app__specials-food {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(1, 1fr);
+    }
 }

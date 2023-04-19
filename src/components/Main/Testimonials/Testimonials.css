@@ -69,3 +69,18 @@
     text-transform: uppercase;
 
 }
+
+
+@media screen and (max-width: 1020px) {
+    .app__testimonial-review-card {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .app__testimonial-review-card {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
