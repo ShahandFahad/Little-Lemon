@@ -1,10 +1,28 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-text {
+    font-size: 0.8rem;
+    text-align: left;
+    color: var(--gray-color);
+    line-height: 1.5;
 
 
-.app__navbar{
+}
+
+.app__navbar {
     width: 100%;
 
-    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    background: rgba(210, 210, 210, 0.65);
+
     backdrop-filter: blur(4px);
     --webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -12,45 +30,138 @@
     z-index: 2;
 
     font-family: 'Markazi Text', serif;
-    font-size: 28px;
-    font-weight: 500;
-    color: #495E57;
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-        /* border: 1px solid rgb(255, 111, 0); */
-    
-    display: flex;
-    gap: 25px;
 }
 
-.app__navbar div {
+
+.app__navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    list-style-type: none;
+}
+
+.app__navbar-links > li {
+    margin: 0 1rem;
+    flex-direction: column;
+}
+.app__navbar-links > li > a {
+    color: #495E57;
+    text-decoration: none;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+
+
+    transition: all 0.3s ease-in-out;
+}
+.app__navbar-links > li > a:hover {
+    color: gray;
+} 
+
+
+
+.app__navbar-menu {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #EDEFEE;
 }
-.app__navbar ul {
-    flex: 1;
-    list-style-type: none;
+.app__navbar-hamburger {
+    width: 70%;
+    height: 70%;
+    color: #495E57;
+}
+
+.app__navbar-menu > div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+
+    padding: 1rem;
+    width: 80%;
+    height: 100vh;
+
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 15px;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    background-color: #f2f2f2;
+
+    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
 }
-.app__navbar ul li a {
+
+.app__navbar-cancel {
+    width: 35px;
+    height: 35px;
+    color: #495E57;
+}
+
+.app__navbar-menu > div > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.app__navbar-menu > div > ul > li {
+    margin: 1rem;
+}
+
+.app__navbar-menu > div > ul > li > a {
+    color: #495E57;
     text-decoration: none;
-    color: unset;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 900px) {
-    .app__navbar-links{
-        display: none !important;
+.app__navbar-menu > div > ul > li > a:hover {
+    color: gray;
+}
+
+@media screen and (min-width: 900px) {
+    .app__navbar-menu {
+        display: none;
     }
-    .app__navbar-logo {
+    .app__navbar-menu > div {
         display: none;
     }
 }
 
+@media screen and (max-width: 900px) {
+    .app__navbar-links {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 2000px) {
+    .p-text{
+        font-size: 1.75rem;
+    }
+}
