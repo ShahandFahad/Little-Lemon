@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
+    "react-animate-on-scroll": "^2.1.5",
     "react-animations": "^1.0.0",
     "react-block-reveal-animation": "^1.0.1",
     "react-dom": "^18.2.0",
