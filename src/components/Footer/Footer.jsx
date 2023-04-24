@@ -10,7 +10,7 @@ import { pulse } from 'react-animations';
 
 const Pulse = styled.div`animation: 8s ${keyframes`${pulse}`} infinite`;
 
-const doormatNavigation = ["Home", "About", "menu", "Reservations", "Order Online", "Login"];
+const doormatNavigation = ["Home", "About", "Menu", "Reservations", "Order Online", "Login"];
 const contact = ["Adress", "phone number", "email"];
 const socialMedia = ["Facebook", "Instagram", "Twitter", "Youtube"];
 
@@ -21,7 +21,7 @@ const FooterItems = (props) => {
             {
                 props.sectionList.map((item) => {
                     return (<li key={item}>
-                        <a href="#">{item}</a>
+                        <a href={`#${item}`}>{item}</a>
                     </li>);
                 })
             }

@@ -23,7 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 80px;
+    gap: 25px;
     color: #495E57;
 }
 
@@ -40,24 +40,47 @@
 }
 
 .app__footer-items {
-    /* border: 1px solid red; */
     margin-top: 50px;
 }
 
 .app__footer-item-title {
     font-family: 'Markazi Text', serif;
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 850;
 }
 
 .app__footer-item-names {
     font-family: 'Karla', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
 
     list-style-type: none; 
 }
 
+.app__footer-item-names > li {
+    margin-top: 7px;
+}
 .app__footer-item-names > li > a {
     text-decoration: none;
+    text-transform: uppercase;
     color: #333333;
+}
+
+@media screen and (max-width: 580px) {
+    .app__footer-section {
+        flex-direction: column;
+        gap: 0;
+    }
+    .app__footer-items {
+        margin-top: 10;
+    }
+    .app__footer-item-title{
+        font-size: 28px;
+    }
+    .app__about-image-box {
+        display: none;
+    }
+
+    .app__footer-item-names > li > a {
+        font-size: 18px;
+    }
 }
