@@ -4,7 +4,11 @@ import { images } from "../../constants";
 import {HiMenuAlt4, HiX} from 'react-icons/hi';
 import { useState } from "react";
 
-const navItems = ['Home', 'About', 'Menu', 'Reservations', 'Order Online', 'Login'];
+import {Link } from "react-router-dom";
+
+const navItems = ['About', 'Menu'];
+// 'Reservations', 'Order Online', 'Login'
+// import Main from "../Main/Main";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -18,20 +22,24 @@ const Navbar = () => {
             </div>
 
         <ul className="app__navbar-links">
-            {
+            <Link to={"/"}>Home</Link>
+            <Link to={'/Reservations'}>Reservation</Link>
+            <Link to={"/OrderOnline"}>Order Online</Link>
+            {/* {
                 navItems.map((item) => {
                     return (
                         <li className="app__flex p_text"
                         key={`key-${item}`}>
+                            
                             <a href={`#${item}`}>
                                 {item}
                             </a>
                         </li>
                     );
                 })
-            }
+            } */}
         </ul>
-
+           
         {/* Mobile Navigation */}
         
         <div className="app__navbar-menu">

@@ -1,21 +1,21 @@
 import './App.css';
-import { Navbar, Header, Main, Footer } from './components';
+import { Navbar, Header, Main, Footer, Reservations } from './components';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import {Routes, Route, BrowserRouter } from "react-router-dom";
+import Test from './Test';
 function App() {
   return (
-    <>
-        <Navbar />
-        <Header />
-        <Main />    
-        {/* <ScrollAnimation
-          animateIn='fadeIn'
-          animateOut='fadeOut'
-          scrollableParentSelector='#scrolly-div'
-        > */}
+    <BrowserRouter>
+      <>
+      
+          <Navbar />
+          <Routes>
+            <Route path='/' element ={ <Main />} />
+             <Route path='/Reservations' element={<Reservations />} />
+          </Routes>
           <Footer />
-        {/* </ScrollAnimation> */}
-    </>
+      </>
+    </BrowserRouter>
   );
 }
 
