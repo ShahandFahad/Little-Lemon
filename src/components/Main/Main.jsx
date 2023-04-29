@@ -11,9 +11,13 @@ export default function Main() {
         cafeDescription: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab tempora deleniti eum repellat explicabo ratione quisquam fugiat quidem. Tempora eius deserunt corrupti esse nemo earum, a doloremque minus molestias! Quia.",
         cafeButtonName: "Reserve a Table",
     }
+
+    const data = {
+        type: "Teting Props Passing from MAIN",
+    }
     return (
     <>
-    <Header />
+    {/* <Header data = { data.type } /> */}
     <main>
         <Specials />
         <Testimonials />
