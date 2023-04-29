@@ -44,15 +44,11 @@
     display: flex;
     justify-content: right;
     align-items: center;
-
+    gap: 15px;
     list-style-type: none;
 }
 
-.app__navbar-links > li {
-    margin: 0 1rem;
-    flex-direction: column;
-}
-.app__navbar-links > li > a {
+.link {
     color: #495E57;
     text-decoration: none;
     flex-direction: column;
@@ -60,15 +56,11 @@
     font-size: 24px;
     font-weight: 600;
 
-
     transition: all 0.3s ease-in-out;
 }
-.app__navbar-links > li > a:hover {
+.link:hover {
     color: gray;
-} 
-
-
-
+}
 .app__navbar-menu {
     width: 35px;
     height: 35px;
@@ -112,36 +104,14 @@
     height: 35px;
     color: #495E57;
 }
-
-.app__navbar-menu > div > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-
+.app__navbar-menu > div {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
 }
-
-.app__navbar-menu > div > ul > li {
-    margin: 1rem;
-}
-
-.app__navbar-menu > div > ul > li > a {
-    color: #495E57;
-    text-decoration: none;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: 500;
-
-    transition: all 0.3s ease-in-out;
-}
-
-.app__navbar-menu > div > ul > li > a:hover {
-    color: gray;
+.app__navbar-menu > div > .link {
+    font-size: 28px;
 }
 
 @media screen and (min-width: 900px) {
