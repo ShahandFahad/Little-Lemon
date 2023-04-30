@@ -54,13 +54,13 @@ function App() {
                     </>
                   } />
                   <Route path='/Reservations' element={
-                      <>
+                    <>
 
-                        <Header />
-                        <Reservations />
+                      <Header />
+                      <Reservations />
 
                         
-                      </>
+                    </>
                   } />
                 </Routes>
             </DataContext.Provider>

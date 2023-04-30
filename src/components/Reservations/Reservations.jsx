@@ -1,10 +1,12 @@
 import React from 'react';
+import GuestSelector from './GuestSelector/GuestSelector';
+
 function Reservations() {
 
     
   return (
     <div>
-      <h1>Reservation Section</h1>
+      <GuestSelector />
     </div>
   );
 };
