@@ -38,6 +38,7 @@
 
 @media screen and (max-width: 780px) {
     .app__reservation-guest { 
-        font-size: 32px;
+        font-size: 28px;
+        padding: 25px;
     }
 }
