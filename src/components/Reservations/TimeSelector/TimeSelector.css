@@ -46,4 +46,12 @@ input[type="radio"] {
         font-size: 28px;
         padding: 25px;
     }
+    
+    .timeslots-capsules {
+        gap: 0.5rem;
+    }
+
+    .radio-lablel-box {
+        width: 100px;
+    }
 }
