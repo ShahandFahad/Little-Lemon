@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { Reservations } from './components';
+
+test('Checking Time Status Section', () => {
+  render( <Reservations />);
+
+  const statusHeadaing = screen.getByText("Evening");
+
+  expect(statusHeadaing).toBeInTheDocument();
 });

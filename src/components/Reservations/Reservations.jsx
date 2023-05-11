@@ -5,11 +5,16 @@ import TimeSelector from './TimeSelector/TimeSelector';
 
 import Reserve from './Reserve/Reserve';
 
+// const reservationData = {guests: '', date: '', time: '', ocassion: ''};
+
 function Reservations() {
   const [time, setTime] = useState('00:00');
   const [guests, setGuests] = useState(0);
   const [date, setDate] = useState(null);
   const [ocassion, setOccasion] = useState('birthday');
+
+  // contains the data of the user from the reservation page which will be submitted via server to the database
+  const [reservation, setReservation] = useState({guests: '', date: '', time: '', ocassion: ''});
 
   // handler function in the Parent component
   // time is passed to it from child component
@@ -19,33 +24,56 @@ function Reservations() {
   const chooseTime = (time) => {
     setTime(time);
 
-    console.log("Time: ", time);
+    // console.log("Time: ", time);
+
+    // reservationData['time'] = time;
+    setReservation({...reservation, time: time});
   }
 
   // handler function in the Parent component
   const chooseGuest = (guests) => {
     setGuests(guests);
-    console.log("Guests: ", guests);
+    // console.log("Guests: ", guests);
+
+    // reservationData['guests'] = guests;
+    setReservation({...reservation, guests: guests});
   }
 
   // handler function in the Parent component to get date selected from child ccomponent
 
   const chooseDate = (date) => {
     setDate(date);
-    console.log("Date: ", date);
+    // console.log("Date: ", date);
+
+    // reservationData['date'] = date;
+    setReservation({...reservation, date: date});
   }    
 
   const chooseOcassion = (ocassion) => {
     setOccasion(ocassion);
-    console.log("Ocassion: ", ocassion);
+    // console.log("Ocassion: ", ocassion);
+
+    // reservationData['ocassion'] = ocassion;
+    setReservation({...reservation, ocassion: ocassion});
+  }
+
+  console.log(reservation);
+
+  // 
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("Booking Data: ", reservation);
+    // From Submission happens here
   }
 
   return (
     <div>
-      <GuestSelector chooseGuest={ chooseGuest } />
-      <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
-      <TimeSelector chooseTime={ chooseTime } />
-      <Reserve />
+      <form action={onSubmitHandler}>
+        <GuestSelector chooseGuest={ chooseGuest } />
+        <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
+        <TimeSelector chooseTime={ chooseTime } />
+        <Reserve />
+      </form>
     </div>
   );
 };

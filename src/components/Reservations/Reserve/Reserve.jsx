@@ -5,8 +5,8 @@ const Reserve = () => {
 
     return (
         <div className="reserve__buttons">
-            <button>Cancel</button>
-            <button>Reserve</button>
+            <button className='btn-reserve'>Cancel</button>
+            <input  className='btn-reserve' type='submit' value="Submit" />
         </div>
     )
 };
