@@ -20,7 +20,7 @@ function App() {
   // console.log(p);
     // Send data to header to based on route
     let data = {};
-    if(path === '/') {
+    if(path === '/' || path === '/Little-Lemon') {
 
       data = headerData;
       // console.log(data);
@@ -43,7 +43,15 @@ function App() {
           <Navbar />
             <DataContext.Provider value={data}>
                 <Routes>
-                  
+                  <Route path='/Little-Lemon' element ={ 
+                    <>
+
+                      <Header />
+                      <Main />
+
+
+                    </>
+                  } />                  
                   <Route path='/' element ={ 
                     <>
 

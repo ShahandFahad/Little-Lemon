@@ -7,18 +7,21 @@ const style =  {
     color: 'red',
 }
 
-const GuestSelector = () => {
+const GuestSelector = ({ chooseGuest }) => {
     let [guest, setGuest] = useState(1);
     const [warning, setWarning] = useState('');
 
     const increment = () => {
 
-        if (guest < 6) {
+        if (guest < 10) {
             guest++;
             setGuest(guest);
             setWarning('');
+
+            // pass number guests to parent component (Reservation)
+            chooseGuest(guest);
         } else {
-            setWarning('* Max 6 guests');
+            setWarning(`* Max 10 guests`);
         }
 
     }
@@ -29,6 +32,9 @@ const GuestSelector = () => {
             guest--;
             setGuest(guest);
             setWarning('');
+
+            // pass number guests to parent (Reservation)
+            chooseGuest(guest);
         } else {
             setWarning('* Min 1 guest');
         }
