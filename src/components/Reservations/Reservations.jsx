@@ -1,81 +1,50 @@
-import React, { useState } from 'react';
-import GuestSelector from './GuestSelector/GuestSelector';
-import DateSelecotr from './DateSelector/DateSelector';
-import TimeSelector from './TimeSelector/TimeSelector';
+import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI} from '../../utilities/API';
+import { React, useReducer } from "react";
+// TODO: 
+// Need to work on this page as this is not behaving as required
+// The available time slots are to be worked on so the only the remaining times slots are shown to the user
+//  And Little fixes has to be done on the form
 
-import Reserve from './Reserve/Reserve';
+const updateTimeSlots = (availableTimeSlots, date) => {
+  const response = fetchAPI(new Date(date));
+ 
+  return (response.length !== 0) ? response : availableTimeSlots; 
+}
 
-// const reservationData = {guests: '', date: '', time: '', ocassion: ''};
+// const initTimeSlots = initAvaliableTimeSlots => [...initAvaliableTimeSlots, ...fetchAPI(new Date())];
 
-function Reservations() {
-  const [time, setTime] = useState('00:00');
-  const [guests, setGuests] = useState(0);
-  const [date, setDate] = useState(null);
-  const [ocassion, setOccasion] = useState('birthday');
 
-  // contains the data of the user from the reservation page which will be submitted via server to the database
-  const [reservation, setReservation] = useState({guests: '', date: '', time: '', ocassion: ''});
 
-  // handler function in the Parent component
-  // time is passed to it from child component
-  /*
-    passing chooseTime handler function as props to TimeSelector component and then to TimeCapsule component from there on each click on radio button a specific time value is passed to it.
-  */
-  const chooseTime = (time) => {
-    setTime(time);
+const Reservations = () => {
+  //  const [
+  //   availableTimeSlots, 
+  //   dispatchTimeslotsOnChange
+  // ] = useReducer(updateTimeSlots, [], initTimeSlots);
 
-    // console.log("Time: ", time);
 
-    // reservationData['time'] = time;
-    setReservation({...reservation, time: time});
+  const submitReservation = (reservation) => {
+    console.log("Reservation From Data: ", reservation);
+    const response = submitAPI(reservation);
+
+    if (response) {
+      alert("Data Submitted Successfully");
+    } else {
+      alert("Data Submission Failed");
+    }
+
   }
 
-  // handler function in the Parent component
-  const chooseGuest = (guests) => {
-    setGuests(guests);
-    // console.log("Guests: ", guests);
-
-    // reservationData['guests'] = guests;
-    setReservation({...reservation, guests: guests});
-  }
-
-  // handler function in the Parent component to get date selected from child ccomponent
-
-  const chooseDate = (date) => {
-    setDate(date);
-    // console.log("Date: ", date);
-
-    // reservationData['date'] = date;
-    setReservation({...reservation, date: date});
-  }    
-
-  const chooseOcassion = (ocassion) => {
-    setOccasion(ocassion);
-    // console.log("Ocassion: ", ocassion);
-
-    // reservationData['ocassion'] = ocassion;
-    setReservation({...reservation, ocassion: ocassion});
-  }
-
-  console.log(reservation);
-
-  // 
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log("Booking Data: ", reservation);
-    // From Submission happens here
-  }
 
   return (
-    <div>
-      <form action={onSubmitHandler}>
-        <GuestSelector chooseGuest={ chooseGuest } />
-        <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
-        <TimeSelector chooseTime={ chooseTime } />
-        <Reserve />
-      </form>
-    </div>
-  );
+    <>
+      <BookingForm 
+        // submitReservation={submitReservation} 
+        // availableTimeSlots={availableTimeSlots} 
+        // dispatchTimeslotsOnChange={dispatchTimeslotsOnChange}
+      />
+    </>
+  )
 };
 
 export default Reservations;
