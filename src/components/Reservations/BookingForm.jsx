@@ -72,8 +72,11 @@ function BookingForm(props) {
     <div>
       <form action={onSubmitHandler}>
         <GuestSelector chooseGuest={ chooseGuest } />
+
         <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
-      <TimeSelector chooseTime={ chooseTime } availableTimeSlots={props.availableTimeSlots} />
+
+        <TimeSelector chooseTime={ chooseTime } availableTimeSlots={props.availableTimeSlots} />
+
         <Reserve />
       </form>
     </div>
