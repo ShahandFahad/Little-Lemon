@@ -28,7 +28,7 @@ const Reservations = () => {
   // Reducer hook which will update the available time slots and initialize the available time slots
    const [
     availableTimeSlots, 
-    dispatchTimeslotsOnChange
+    dispatchTimeslotsOnDateChange
   ] = useReducer(updateTimeSlots, {morning: [], afternoon: [], evening: []}, initTimeSlots);
 
   console.log("AV:", availableTimeSlots);
@@ -52,7 +52,7 @@ const Reservations = () => {
       <BookingForm 
         submitReservation={submitReservation} 
         availableTimeSlots={availableTimeSlots} 
-        dispatchTimeslotsOnChange={dispatchTimeslotsOnChange}
+        dispatchTimeslotsOnDateChange={dispatchTimeslotsOnDateChange}
       />
     </>
   )
