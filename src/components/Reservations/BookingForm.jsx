@@ -9,12 +9,12 @@ import Reserve from './Reserve/Reserve';
 
 function BookingForm(props) {
   const [time, setTime] = useState('00:00');
-  const [guests, setGuests] = useState(0);
-  const [date, setDate] = useState(null);
+  const [guests, setGuests] = useState(1);
+  const [date, setDate] = useState('');
   const [ocassion, setOccasion] = useState('birthday');
 
   // contains the data of the user from the reservation page which will be submitted via server to the database
-  const [reservation, setReservation] = useState({guests: '', date: '', time: '', ocassion: ''});
+  const [reservation, setReservation] = useState({guests: guests, date: '', time: '', ocassion: ocassion});
 
   // handler function in the Parent component
   // time is passed to it from child component
@@ -47,6 +47,9 @@ function BookingForm(props) {
 
     // reservationData['date'] = date;
     setReservation({...reservation, date: date});
+
+    props.dispatchTimeslotsOnDateChange(date);
+
   }    
 
   const chooseOcassion = (ocassion) => {
@@ -57,24 +60,47 @@ function BookingForm(props) {
     setReservation({...reservation, ocassion: ocassion});
   }
 
-  console.log("RESERVATION PAGE: ", reservation);
+  // console.log("RESERVATION PAGE: ", reservation);
 
 
   // Form Submission
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
+    // Submission happens here
     props.submitReservation(reservation);
   }
 
+
+  const validateReservation = () => {
+    if (reservation.time !== '' && 
+        reservation.date !== '' && 
+        reservation.guests !== '' && 
+        reservation.ocassion !== '') {
+      console.log(reservation.time);
+      console.log(reservation.date);
+      console.log(reservation.ocassion);
+      console.log(reservation.guests);
+      return true;
+    }
+
+    return false;
+  }
+
+  console.log("Field Validation: ", validateReservation());
 
   return (
     <div>
       <form action={onSubmitHandler}>
         <GuestSelector chooseGuest={ chooseGuest } />
+
         <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
-      <TimeSelector chooseTime={ chooseTime } availableTimeSlots={props.availableTimeSlots} />
-        <Reserve />
+
+        <TimeSelector chooseTime={ chooseTime } availableTimeSlots={props.availableTimeSlots} />
+
+        { // Enable, Disable Submit button on form validation
+          validateReservation() ? <Reserve value={0} /> : <Reserve value={1} />
+        }
       </form>
     </div>
   );

@@ -8,7 +8,6 @@
 
     padding: 50px;
     
-    border: 1px solid red;
 }
 
 .reserve__buttons .btn-reserve {
@@ -29,4 +28,9 @@
 .reserve__buttons .btn-reserve:hover {
     background-color: #F4CE14;
     cursor: pointer;
+}
+
+.reserve__buttons .btn-reserve:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }

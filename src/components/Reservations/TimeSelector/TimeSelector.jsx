@@ -1,32 +1,32 @@
 import './TimeSelector.css';
 import React, { useState } from 'react';
 
-const timeSlots = {
-    morning: [
-        '8:00',
-        '8:30',
-        '9:00',
-        '9:30',
-        '10:00',
-        '10:30',
-    ],
-    afternoon: [
-        '1:00',
-        '1:30',
-        '2:00',
-        '2:30',
-        '3:00',
-        '3:30',
-    ],
-    evening: [
-        '7:00',
-        '7:30',
-        '8:00',
-        '8:30',
-        '9:00',
-        '9:30',
-    ]
-};
+// const timeSlots = {
+//     morning: [
+//         '8:00',
+//         '8:30',
+//         '9:00',
+//         '9:30',
+//         '10:00',
+//         '10:30',
+//     ],
+//     afternoon: [
+//         '1:00',
+//         '1:30',
+//         '2:00',
+//         '2:30',
+//         '3:00',
+//         '3:30',
+//     ],
+//     evening: [
+//         '7:00',
+//         '7:30',
+//         '8:00',
+//         '8:30',
+//         '9:00',
+//         '9:30',
+//     ]
+// };
 
 
 
@@ -59,7 +59,7 @@ const TimeCapsule = (props) => {
     );
 }
 
-const TimeSelector = ({chooseTime}) => {
+const TimeSelector = (props) => {
     const hour = new Date().toTimeString().split(' ')[0].split(':');
     // console.log("Time: ", hour);
 
@@ -93,15 +93,15 @@ const TimeSelector = ({chooseTime}) => {
     return (
         <div className="reservation__time-selector">
             {
-                (isMorning && ( <TimeCapsule chooseTime={chooseTime} morning="Morning" slots={timeSlots.morning} /> ))
+                (isMorning && ( <TimeCapsule chooseTime={props.chooseTime} morning="Morning" slots={props.availableTimeSlots.morning} /> ))
 
                 ||
 
-                (isAfternoon && ( <TimeCapsule chooseTime={chooseTime} morning="Afternoon" slots={timeSlots.afternoon}/>))
+                (isAfternoon && ( <TimeCapsule chooseTime={props.chooseTime} morning="Afternoon" slots={props.availableTimeSlots.afternoon}/>))
 
                 ||
 
-                (isEvening && ( <TimeCapsule chooseTime={chooseTime} morning="Evening" slots={timeSlots.evening}/> ))
+                (isEvening && ( <TimeCapsule chooseTime={props.chooseTime} morning="Evening" slots={props.availableTimeSlots.evening}/> ))
 
             }
             {/* <div>
