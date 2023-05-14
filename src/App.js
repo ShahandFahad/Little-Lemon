@@ -1,8 +1,8 @@
 import './App.css';
 import { useState, useEffect, React } from 'react';
-import { Navbar, Header, Main, Footer, Reservations } from './components';
+import { Navbar, Header, Main, Footer, Reservations, OrderOnline } from './components';
 import {Routes, Route, useLocation  } from "react-router-dom";
-import { headerData, reservationData } from './constants';
+import { headerData, reservationData, orderOnline } from './constants';
 import DataContext from './DataContext';
 import ConfirmedBooking from './components/Reservations/ConfirmedBooking';
 
@@ -33,7 +33,8 @@ function App() {
 
     } else if (path === '/OrderOnline') {
 
-      console.log("Path not setup!");
+      // console.log("Path not setup!");
+      data = orderOnline;
 
     }
 
@@ -71,6 +72,12 @@ function App() {
                         
                     </>
                   } />
+                  <Route path='/OrderOnline' element={
+                    <>
+                      <Header />
+                      <OrderOnline />  
+                    </>
+                  } />                  
 
                   {/* Path for booking confirmation */}
                   <Route path='/ConfirmedBooking' element={<ConfirmedBooking/>}/>

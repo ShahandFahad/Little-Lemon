@@ -12,5 +12,6 @@ import mawra from '../assets/Mawra.png';
 import iqsf from '../assets/IQSF.png';
 import resturantChefB from '../assets/restaurantChefB.jpg';
 import bookingConfirmed from '../assets/bookingConfirmed.png';
+import underConstruction from '../assets/underConstruction.PNG';
 
-export default {logo, greekSalad, resturantFood, lemonDessert, bruchetta, MarioandAdrianA, MarioandAdrianb, resturant, sajal, ramsha, mawra, iqsf, resturantChefB, bookingConfirmed};
+export default {logo, greekSalad, resturantFood, lemonDessert, bruchetta, MarioandAdrianA, MarioandAdrianb, resturant, sajal, ramsha, mawra, iqsf, resturantChefB, bookingConfirmed, underConstruction};
