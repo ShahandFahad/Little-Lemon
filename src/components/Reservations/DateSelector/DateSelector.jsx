@@ -47,7 +47,7 @@ const DateSelector = (props) => {
     const startingTime = 8; // 8 AM
     const closoingTime = 21; // 9 PM
 
-    if (parseInt(hour[0]) >= startingTime && parseInt(hour[0]) <= closoingTime) {
+    if (parseInt(hour[0]) > startingTime && parseInt(hour[0]) < closoingTime) {
         // console.log('WE are Open!');
         cafeStatus = 'Open';
     } else {
