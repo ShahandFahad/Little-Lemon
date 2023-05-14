@@ -4,6 +4,7 @@ import { Navbar, Header, Main, Footer, Reservations } from './components';
 import {Routes, Route, useLocation  } from "react-router-dom";
 import { headerData, reservationData } from './constants';
 import DataContext from './DataContext';
+import ConfirmedBooking from './components/Reservations/ConfirmedBooking';
 
 function App() {
 // use state to set data
@@ -70,6 +71,10 @@ function App() {
                         
                     </>
                   } />
+
+                  {/* Path for booking confirmation */}
+                  <Route path='/ConfirmedBooking' element={<ConfirmedBooking/>}/>
+
                 </Routes>
             </DataContext.Provider>
           <Footer />

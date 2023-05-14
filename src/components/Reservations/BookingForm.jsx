@@ -68,6 +68,8 @@ function BookingForm(props) {
     e.preventDefault();
 
     // Submission happens here
+  // console.log("RESERVATION PAGE: ", reservation);
+    
     props.submitReservation(reservation);
   }
 
@@ -77,21 +79,21 @@ function BookingForm(props) {
         reservation.date !== '' && 
         reservation.guests !== '' && 
         reservation.ocassion !== '') {
-      console.log(reservation.time);
-      console.log(reservation.date);
-      console.log(reservation.ocassion);
-      console.log(reservation.guests);
+      // console.log(reservation.time);
+      // console.log(reservation.date);
+      // console.log(reservation.ocassion);
+      // console.log(reservation.guests);
       return true;
     }
 
     return false;
   }
 
-  console.log("Field Validation: ", validateReservation());
+  // console.log("Field Validation: ", validateReservation());
 
   return (
     <div>
-      <form action={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <GuestSelector chooseGuest={ chooseGuest } />
 
         <DateSelecotr chooseDate={chooseDate} chooseOcassion={chooseOcassion} ocassion={ocassion}/>
