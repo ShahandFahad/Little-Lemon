@@ -17,23 +17,19 @@ function App() {
     setPath(location.pathname);
   }, [location.pathname]);
 
-  // const p = location.pathname;
-  // console.log(p);
+
     // Send data to header to based on route
     let data = {};
     if(path === '/' || path === '/Little-Lemon') {
 
       data = headerData;
-      // console.log(data);
 
     } else if (path === '/Reservations') {
 
       data = reservationData;
-      // console.log(data);
 
     } else if (path === '/OrderOnline') {
 
-      // console.log("Path not setup!");
       data = orderOnline;
 
     }

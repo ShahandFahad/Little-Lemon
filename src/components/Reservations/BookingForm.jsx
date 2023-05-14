@@ -5,8 +5,6 @@ import TimeSelector from './TimeSelector/TimeSelector';
 
 import Reserve from './Reserve/Reserve';
 
-// const reservationData = {guests: '', date: '', time: '', ocassion: ''};
-
 function BookingForm(props) {
   const [time, setTime] = useState('00:00');
   const [guests, setGuests] = useState(1);
@@ -24,18 +22,12 @@ function BookingForm(props) {
   const chooseTime = (time) => {
     setTime(time);
 
-    // console.log("Time: ", time);
-
-    // reservationData['time'] = time;
     setReservation({...reservation, time: time});
   }
 
   // handler function in the Parent component
   const chooseGuest = (guests) => {
     setGuests(guests);
-    // console.log("Guests: ", guests);
-
-    // reservationData['guests'] = guests;
     setReservation({...reservation, guests: guests});
   }
 
@@ -43,9 +35,6 @@ function BookingForm(props) {
 
   const chooseDate = (date) => {
     setDate(date);
-    // console.log("Date: ", date);
-
-    // reservationData['date'] = date;
     setReservation({...reservation, date: date});
 
     props.dispatchTimeslotsOnDateChange(date);
@@ -54,13 +43,11 @@ function BookingForm(props) {
 
   const chooseOcassion = (ocassion) => {
     setOccasion(ocassion);
-    // console.log("Ocassion: ", ocassion);
 
     // reservationData['ocassion'] = ocassion;
     setReservation({...reservation, ocassion: ocassion});
   }
 
-  // console.log("RESERVATION PAGE: ", reservation);
 
 
   // Form Submission
@@ -68,7 +55,6 @@ function BookingForm(props) {
     e.preventDefault();
 
     // Submission happens here
-  // console.log("RESERVATION PAGE: ", reservation);
     
     props.submitReservation(reservation);
   }
@@ -79,17 +65,12 @@ function BookingForm(props) {
         reservation.date !== '' && 
         reservation.guests !== '' && 
         reservation.ocassion !== '') {
-      // console.log(reservation.time);
-      // console.log(reservation.date);
-      // console.log(reservation.ocassion);
-      // console.log(reservation.guests);
       return true;
     }
 
     return false;
   }
 
-  // console.log("Field Validation: ", validateReservation());
 
   return (
     <div>

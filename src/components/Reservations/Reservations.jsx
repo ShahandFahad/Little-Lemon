@@ -4,10 +4,6 @@ import { React, useReducer } from "react";
 
 import { useNavigate, redirect } from "react-router-dom";
 
-// TODO: 
-// Need to work on this page as this is not behaving as required
-// The available time slots are to be worked on so the only the remaining times slots are shown to the user
-//  And Little fixes has to be done on the form
 
 const updateTimeSlots = (availableTimeSlots, date) => {
   const response = fetchAPI(new Date(date));
@@ -35,8 +31,6 @@ const Reservations = () => {
   ] = useReducer(updateTimeSlots, {morning: [], afternoon: [], evening: []}, initTimeSlots);
 
   const navigate = useNavigate();
-
-  // console.log("AV:", availableTimeSlots);
 
   // Handler Function to submit the reservation data to the server
   const submitReservation = (reservation) => {
