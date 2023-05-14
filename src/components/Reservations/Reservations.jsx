@@ -1,10 +1,9 @@
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI} from '../../utilities/API';
 import { React, useReducer } from "react";
-// TODO: 
-// Need to work on this page as this is not behaving as required
-// The available time slots are to be worked on so the only the remaining times slots are shown to the user
-//  And Little fixes has to be done on the form
+
+import { useNavigate, redirect } from "react-router-dom";
+
 
 const updateTimeSlots = (availableTimeSlots, date) => {
   const response = fetchAPI(new Date(date));
@@ -31,15 +30,20 @@ const Reservations = () => {
     dispatchTimeslotsOnDateChange
   ] = useReducer(updateTimeSlots, {morning: [], afternoon: [], evening: []}, initTimeSlots);
 
-  console.log("AV:", availableTimeSlots);
+  const navigate = useNavigate();
 
   // Handler Function to submit the reservation data to the server
   const submitReservation = (reservation) => {
     console.log("Reservation From Data: ", reservation);
     const response = submitAPI(reservation);
 
+    const confrimPageMap = new Map();
+    confrimPageMap.set("confirmedBooking", {name: 'Confirmed Booking', path: '/ConfirmedBooking', anchorable: true});
+
+
     if (response) {
-      alert("Data Submitted Successfully");
+      // alert("Data Submitted Successfully");
+      navigate(confrimPageMap.get("confirmedBooking").path);
     } else {
       alert("Data Submission Failed");
     }

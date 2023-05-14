@@ -1,9 +1,10 @@
 import './App.css';
 import { useState, useEffect, React } from 'react';
-import { Navbar, Header, Main, Footer, Reservations } from './components';
+import { Navbar, Header, Main, Footer, Reservations, OrderOnline } from './components';
 import {Routes, Route, useLocation  } from "react-router-dom";
-import { headerData, reservationData } from './constants';
+import { headerData, reservationData, orderOnline } from './constants';
 import DataContext from './DataContext';
+import ConfirmedBooking from './components/Reservations/ConfirmedBooking';
 
 function App() {
 // use state to set data
@@ -16,23 +17,20 @@ function App() {
     setPath(location.pathname);
   }, [location.pathname]);
 
-  // const p = location.pathname;
-  // console.log(p);
+
     // Send data to header to based on route
     let data = {};
     if(path === '/' || path === '/Little-Lemon') {
 
       data = headerData;
-      // console.log(data);
 
     } else if (path === '/Reservations') {
 
       data = reservationData;
-      // console.log(data);
 
     } else if (path === '/OrderOnline') {
 
-      console.log("Path not setup!");
+      data = orderOnline;
 
     }
 
@@ -70,6 +68,16 @@ function App() {
                         
                     </>
                   } />
+                  <Route path='/OrderOnline' element={
+                    <>
+                      <Header />
+                      <OrderOnline />  
+                    </>
+                  } />                  
+
+                  {/* Path for booking confirmation */}
+                  <Route path='/ConfirmedBooking' element={<ConfirmedBooking/>}/>
+
                 </Routes>
             </DataContext.Provider>
           <Footer />

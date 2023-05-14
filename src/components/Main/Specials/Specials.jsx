@@ -4,10 +4,6 @@ import { images } from "../../../constants";
 import './Specials.css';
 import { MdDeliveryDining } from 'react-icons/md';
 
-import styled, { keyframes } from 'styled-components';
-import { pulse } from 'react-animations'; 
-
-const Pulse = styled.div`animation: 8s ${keyframes`${pulse}`} infinite`;
 
 
 const foodItems = [
@@ -80,9 +76,7 @@ const Specials = () => {
                         {
                             foodItems.map((item) => {
                                 return (
-                                    <Pulse>
                                         <FoodCard props={item} />
-                                    </Pulse>
                                 );
                             })
                         }
