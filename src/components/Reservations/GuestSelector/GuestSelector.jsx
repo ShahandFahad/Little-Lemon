@@ -49,9 +49,11 @@ const GuestSelector = ({ chooseGuest }) => {
             <div className='app__reservation-guest-counter-box'>
 
                     <div className="app__reservation-guest-counter">
-                        <CgMathPlus className='guest-increment' onClick={increment}/>
-                            <pre> {guest} </pre>
                         <CgMathMinus className='guest-decrement' onClick={decrement}/>
+                        
+                            <pre> {guest} </pre>
+
+                        <CgMathPlus className='guest-increment' onClick={increment}/>                        
                     </div>
                 { // Conditional rendering based on guest count
                     guest <= 1 && (<span style={style}>{warning}</span>)
